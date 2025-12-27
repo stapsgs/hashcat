@@ -1,0 +1,415 @@
+-- ============================================================================
+-- Oracle Password Hash Monitoring Package
+-- PL/SQL package for detecting and sending password hash changes
+-- Run as HASHCAT_MONITOR user
+-- ============================================================================
+
+CREATE OR REPLACE PACKAGE hashcat_monitor_pkg AS
+    -- Package constants
+    c_version CONSTANT VARCHAR2(10) := '1.0.0';
+
+    -- Log levels
+    c_log_debug CONSTANT VARCHAR2(10) := 'DEBUG';
+    c_log_info  CONSTANT VARCHAR2(10) := 'INFO';
+    c_log_warn  CONSTANT VARCHAR2(10) := 'WARN';
+    c_log_error CONSTANT VARCHAR2(10) := 'ERROR';
+
+    -- Main procedures
+    PROCEDURE run_monitor;
+    PROCEDURE detect_hash_changes;
+    PROCEDURE send_pending_hashes;
+    PROCEDURE cleanup_old_logs(p_days_to_keep IN NUMBER DEFAULT 90);
+
+    -- Utility functions
+    FUNCTION get_config(p_key IN VARCHAR2) RETURN VARCHAR2;
+    FUNCTION is_user_excluded(p_username IN VARCHAR2) RETURN BOOLEAN;
+    FUNCTION get_hash_type(p_hash IN VARCHAR2) RETURN VARCHAR2;
+
+    -- Logging procedure
+    PROCEDURE log_message(
+        p_level   IN VARCHAR2,
+        p_module  IN VARCHAR2,
+        p_message IN VARCHAR2,
+        p_error_code    IN NUMBER DEFAULT NULL,
+        p_error_message IN VARCHAR2 DEFAULT NULL
+    );
+
+END hashcat_monitor_pkg;
+/
+
+CREATE OR REPLACE PACKAGE BODY hashcat_monitor_pkg AS
+
+    -- ========================================================================
+    -- Private helper procedures/functions
+    -- ========================================================================
+
+    FUNCTION get_config(p_key IN VARCHAR2) RETURN VARCHAR2 IS
+        v_value VARCHAR2(4000);
+    BEGIN
+        SELECT config_value INTO v_value
+        FROM hashcat_config
+        WHERE config_key = p_key;
+        RETURN v_value;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            RETURN NULL;
+    END get_config;
+
+    FUNCTION is_user_excluded(p_username IN VARCHAR2) RETURN BOOLEAN IS
+        v_excluded_users VARCHAR2(4000);
+    BEGIN
+        v_excluded_users := get_config('EXCLUDED_USERS');
+        IF v_excluded_users IS NULL THEN
+            RETURN FALSE;
+        END IF;
+        RETURN INSTR(',' || UPPER(v_excluded_users) || ',',
+                     ',' || UPPER(p_username) || ',') > 0;
+    END is_user_excluded;
+
+    FUNCTION get_hash_type(p_hash IN VARCHAR2) RETURN VARCHAR2 IS
+    BEGIN
+        IF p_hash IS NULL THEN
+            RETURN 'NONE';
+        ELSIF LENGTH(p_hash) = 62 AND SUBSTR(p_hash, 1, 1) = 'S' THEN
+            RETURN 'SHA1';  -- Oracle 11g+ SHA-1 based
+        ELSIF LENGTH(p_hash) = 30 THEN
+            RETURN 'DES';   -- Oracle 10g and earlier DES-based
+        ELSIF INSTR(p_hash, 'T:') = 1 THEN
+            RETURN 'SHA512'; -- Oracle 12c+ SHA-512 based
+        ELSE
+            RETURN 'UNKNOWN';
+        END IF;
+    END get_hash_type;
+
+    PROCEDURE log_message(
+        p_level   IN VARCHAR2,
+        p_module  IN VARCHAR2,
+        p_message IN VARCHAR2,
+        p_error_code    IN NUMBER DEFAULT NULL,
+        p_error_message IN VARCHAR2 DEFAULT NULL
+    ) IS
+        PRAGMA AUTONOMOUS_TRANSACTION;
+    BEGIN
+        INSERT INTO hashcat_log (
+            log_id, log_level, module_name, message, error_code, error_message
+        ) VALUES (
+            hashcat_log_seq.NEXTVAL, p_level, p_module,
+            SUBSTR(p_message, 1, 4000), p_error_code,
+            SUBSTR(p_error_message, 1, 4000)
+        );
+        COMMIT;
+    END log_message;
+
+    -- ========================================================================
+    -- Send hash to hashcat server via HTTP
+    -- ========================================================================
+    PROCEDURE send_hash_to_server(
+        p_change_id IN NUMBER,
+        p_username  IN VARCHAR2,
+        p_hash      IN VARCHAR2,
+        p_hash_type IN VARCHAR2
+    ) IS
+        v_url           VARCHAR2(4000);
+        v_token         VARCHAR2(4000);
+        v_source        VARCHAR2(100);
+        v_timeout       NUMBER;
+        v_request       UTL_HTTP.REQ;
+        v_response      UTL_HTTP.RESP;
+        v_response_text VARCHAR2(4000);
+        v_json_payload  VARCHAR2(4000);
+        v_buffer        VARCHAR2(32767);
+    BEGIN
+        -- Get configuration
+        v_url     := get_config('HASHCAT_SERVER_URL');
+        v_token   := get_config('HASHCAT_SERVER_TOKEN');
+        v_source  := get_config('SOURCE_SYSTEM');
+        v_timeout := NVL(TO_NUMBER(get_config('HTTP_TIMEOUT')), 30);
+
+        IF v_url IS NULL THEN
+            log_message(c_log_error, 'SEND_HASH',
+                       'HASHCAT_SERVER_URL not configured');
+            RETURN;
+        END IF;
+
+        -- Build JSON payload
+        v_json_payload := '{' ||
+            '"source": "' || v_source || '",' ||
+            '"username": "' || p_username || '",' ||
+            '"hash": "' || p_hash || '",' ||
+            '"hash_type": "' || p_hash_type || '",' ||
+            '"change_id": ' || p_change_id || ',' ||
+            '"timestamp": "' || TO_CHAR(SYSDATE, 'YYYY-MM-DD"T"HH24:MI:SS') || '"' ||
+        '}';
+
+        -- Set timeout
+        UTL_HTTP.SET_TRANSFER_TIMEOUT(v_timeout);
+
+        -- Create request
+        v_request := UTL_HTTP.BEGIN_REQUEST(v_url, 'POST', 'HTTP/1.1');
+        UTL_HTTP.SET_HEADER(v_request, 'Content-Type', 'application/json');
+        UTL_HTTP.SET_HEADER(v_request, 'Content-Length', LENGTH(v_json_payload));
+
+        -- Add authorization header if token is configured
+        IF v_token IS NOT NULL AND v_token != 'your-api-token-here' THEN
+            UTL_HTTP.SET_HEADER(v_request, 'Authorization', 'Bearer ' || v_token);
+        END IF;
+
+        -- Send body
+        UTL_HTTP.WRITE_TEXT(v_request, v_json_payload);
+
+        -- Get response
+        v_response := UTL_HTTP.GET_RESPONSE(v_request);
+
+        -- Read response body
+        BEGIN
+            LOOP
+                UTL_HTTP.READ_LINE(v_response, v_buffer, TRUE);
+                v_response_text := v_response_text || v_buffer;
+            END LOOP;
+        EXCEPTION
+            WHEN UTL_HTTP.END_OF_BODY THEN
+                NULL;
+        END;
+
+        UTL_HTTP.END_RESPONSE(v_response);
+
+        -- Update change record
+        UPDATE hashcat_hash_changes
+        SET sent_to_server = 'Y',
+            send_date = SYSDATE,
+            send_status = 'HTTP ' || v_response.status_code,
+            http_response = SUBSTR(v_response_text, 1, 4000)
+        WHERE change_id = p_change_id;
+
+        log_message(c_log_info, 'SEND_HASH',
+                   'Hash sent for user ' || p_username ||
+                   ', HTTP status: ' || v_response.status_code);
+
+    EXCEPTION
+        WHEN OTHERS THEN
+            DECLARE
+                v_error_msg VARCHAR2(4000) := SQLERRM;
+                v_error_code NUMBER := SQLCODE;
+            BEGIN
+                -- Update with error
+                UPDATE hashcat_hash_changes
+                SET send_status = 'ERROR: ' || v_error_msg,
+                    send_date = SYSDATE
+                WHERE change_id = p_change_id;
+
+                log_message(c_log_error, 'SEND_HASH',
+                           'Failed to send hash for user ' || p_username,
+                           v_error_code, v_error_msg);
+            END;
+    END send_hash_to_server;
+
+    -- ========================================================================
+    -- Detect password hash changes
+    -- ========================================================================
+    PROCEDURE detect_hash_changes IS
+        v_count NUMBER := 0;
+    BEGIN
+        log_message(c_log_info, 'DETECT_CHANGES', 'Starting hash change detection');
+
+        -- Process each user from sys.user$
+        FOR rec IN (
+            SELECT u.name AS username,
+                   u.password AS password_hash,
+                   u.spare4 AS spare4_hash,  -- SHA-1 hash in 11g+
+                   du.account_status
+            FROM sys.user$ u
+            JOIN dba_users du ON u.name = du.username
+            WHERE u.type# = 1  -- Regular users only
+              AND u.name NOT LIKE '%$%'  -- Exclude internal users
+        ) LOOP
+            -- Skip excluded users
+            IF is_user_excluded(rec.username) THEN
+                CONTINUE;
+            END IF;
+
+            DECLARE
+                v_old_hash     VARCHAR2(4000);
+                v_new_hash     VARCHAR2(4000);
+                v_hash_type    VARCHAR2(50);
+                v_exists       NUMBER;
+            BEGIN
+                -- Prefer spare4 (SHA-1) hash if available, otherwise use password (DES)
+                v_new_hash := COALESCE(rec.spare4_hash, rec.password_hash);
+                v_hash_type := get_hash_type(v_new_hash);
+
+                -- Check if user exists in our tracking table
+                SELECT COUNT(*), MAX(password_hash)
+                INTO v_exists, v_old_hash
+                FROM hashcat_user_hashes
+                WHERE username = rec.username;
+
+                IF v_exists = 0 THEN
+                    -- New user - insert initial record
+                    INSERT INTO hashcat_user_hashes (
+                        hash_id, username, password_hash, hash_type,
+                        account_status, hash_changed
+                    ) VALUES (
+                        hashcat_hash_seq.NEXTVAL, rec.username, v_new_hash,
+                        v_hash_type, rec.account_status, 'N'
+                    );
+
+                    -- Log the new hash as a change
+                    INSERT INTO hashcat_hash_changes (
+                        change_id, username, old_hash, new_hash,
+                        hash_type, sent_to_server
+                    ) VALUES (
+                        hashcat_change_seq.NEXTVAL, rec.username, NULL,
+                        v_new_hash, v_hash_type, 'N'
+                    );
+
+                    v_count := v_count + 1;
+                    log_message(c_log_info, 'DETECT_CHANGES',
+                               'New user detected: ' || rec.username);
+
+                ELSIF v_old_hash IS NULL OR v_old_hash != v_new_hash THEN
+                    -- Hash has changed
+                    UPDATE hashcat_user_hashes
+                    SET password_hash = v_new_hash,
+                        hash_type = v_hash_type,
+                        account_status = rec.account_status,
+                        last_checked = SYSDATE,
+                        hash_changed = 'Y'
+                    WHERE username = rec.username;
+
+                    -- Record the change
+                    INSERT INTO hashcat_hash_changes (
+                        change_id, username, old_hash, new_hash,
+                        hash_type, sent_to_server
+                    ) VALUES (
+                        hashcat_change_seq.NEXTVAL, rec.username, v_old_hash,
+                        v_new_hash, v_hash_type, 'N'
+                    );
+
+                    v_count := v_count + 1;
+                    log_message(c_log_info, 'DETECT_CHANGES',
+                               'Password change detected for user: ' || rec.username);
+                ELSE
+                    -- No change, just update last_checked
+                    UPDATE hashcat_user_hashes
+                    SET last_checked = SYSDATE,
+                        account_status = rec.account_status
+                    WHERE username = rec.username;
+                END IF;
+            END;
+        END LOOP;
+
+        COMMIT;
+        log_message(c_log_info, 'DETECT_CHANGES',
+                   'Hash change detection completed. Changes found: ' || v_count);
+
+    EXCEPTION
+        WHEN OTHERS THEN
+            ROLLBACK;
+            log_message(c_log_error, 'DETECT_CHANGES',
+                       'Error detecting hash changes', SQLCODE, SQLERRM);
+            RAISE;
+    END detect_hash_changes;
+
+    -- ========================================================================
+    -- Send pending hashes to hashcat server
+    -- ========================================================================
+    PROCEDURE send_pending_hashes IS
+        v_count NUMBER := 0;
+    BEGIN
+        log_message(c_log_info, 'SEND_PENDING', 'Starting to send pending hashes');
+
+        -- Check if monitoring is enabled
+        IF get_config('ENABLED') != 'Y' THEN
+            log_message(c_log_info, 'SEND_PENDING', 'Monitoring is disabled');
+            RETURN;
+        END IF;
+
+        -- Process unsent changes
+        FOR rec IN (
+            SELECT change_id, username, new_hash, hash_type
+            FROM hashcat_hash_changes
+            WHERE sent_to_server = 'N'
+              AND new_hash IS NOT NULL
+            ORDER BY change_date
+        ) LOOP
+            send_hash_to_server(
+                p_change_id => rec.change_id,
+                p_username  => rec.username,
+                p_hash      => rec.new_hash,
+                p_hash_type => rec.hash_type
+            );
+            v_count := v_count + 1;
+            COMMIT;
+        END LOOP;
+
+        log_message(c_log_info, 'SEND_PENDING',
+                   'Finished sending hashes. Count: ' || v_count);
+
+    EXCEPTION
+        WHEN OTHERS THEN
+            log_message(c_log_error, 'SEND_PENDING',
+                       'Error sending pending hashes', SQLCODE, SQLERRM);
+            RAISE;
+    END send_pending_hashes;
+
+    -- ========================================================================
+    -- Main monitor procedure (called by scheduler)
+    -- ========================================================================
+    PROCEDURE run_monitor IS
+    BEGIN
+        log_message(c_log_info, 'RUN_MONITOR',
+                   'Starting hashcat monitor v' || c_version);
+
+        -- Check if monitoring is enabled
+        IF get_config('ENABLED') != 'Y' THEN
+            log_message(c_log_info, 'RUN_MONITOR', 'Monitoring is disabled');
+            RETURN;
+        END IF;
+
+        -- Step 1: Detect hash changes
+        detect_hash_changes;
+
+        -- Step 2: Send pending hashes to server
+        send_pending_hashes;
+
+        log_message(c_log_info, 'RUN_MONITOR', 'Monitor run completed successfully');
+
+    EXCEPTION
+        WHEN OTHERS THEN
+            log_message(c_log_error, 'RUN_MONITOR',
+                       'Monitor run failed', SQLCODE, SQLERRM);
+    END run_monitor;
+
+    -- ========================================================================
+    -- Cleanup old log entries
+    -- ========================================================================
+    PROCEDURE cleanup_old_logs(p_days_to_keep IN NUMBER DEFAULT 90) IS
+        v_deleted NUMBER;
+    BEGIN
+        DELETE FROM hashcat_log
+        WHERE log_date < SYSTIMESTAMP - p_days_to_keep;
+        v_deleted := SQL%ROWCOUNT;
+
+        DELETE FROM hashcat_hash_changes
+        WHERE change_date < SYSDATE - p_days_to_keep
+          AND sent_to_server = 'Y';
+        v_deleted := v_deleted + SQL%ROWCOUNT;
+
+        COMMIT;
+
+        log_message(c_log_info, 'CLEANUP',
+                   'Cleanup completed. Deleted ' || v_deleted || ' old records');
+    EXCEPTION
+        WHEN OTHERS THEN
+            ROLLBACK;
+            log_message(c_log_error, 'CLEANUP',
+                       'Cleanup failed', SQLCODE, SQLERRM);
+    END cleanup_old_logs;
+
+END hashcat_monitor_pkg;
+/
+
+SHOW ERRORS PACKAGE hashcat_monitor_pkg;
+SHOW ERRORS PACKAGE BODY hashcat_monitor_pkg;
+
+PROMPT Package HASHCAT_MONITOR_PKG created successfully
