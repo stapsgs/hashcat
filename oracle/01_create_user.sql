@@ -1,4 +1,4 @@
--- ============================================================================
+--  ============================================================================
 -- Oracle Password Hash Monitoring User Setup
 -- Creates HASHCAT_MONITOR user with necessary privileges
 -- Run as SYSDBA
