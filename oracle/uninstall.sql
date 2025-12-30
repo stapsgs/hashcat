@@ -40,9 +40,7 @@ PROMPT Dropping views...
 DROP VIEW v_hashcat_stats;
 DROP VIEW v_hashcat_job_status;
 DROP VIEW v_hashcat_logs;
-DROP VIEW v_hashcat_pending;
 DROP VIEW v_hashcat_user_status;
-DROP VIEW v_hashcat_recent_changes;
 
 -- Drop package
 PROMPT Dropping package...
@@ -51,14 +49,12 @@ DROP PACKAGE hashcat_monitor_pkg;
 -- Drop tables
 PROMPT Dropping tables...
 DROP TABLE hashcat_log;
-DROP TABLE hashcat_hash_changes;
 DROP TABLE hashcat_user_state;
 DROP TABLE hashcat_config;
 
 -- Drop sequences
 PROMPT Dropping sequences...
 DROP SEQUENCE hashcat_log_seq;
-DROP SEQUENCE hashcat_change_seq;
 
 PROMPT ============================================================
 PROMPT Objects removed successfully.

@@ -3,20 +3,6 @@
 -- Run as HASHCAT_MONITOR user
 -- ============================================================================
 
--- View: Recent hash changes
-CREATE OR REPLACE VIEW v_hashcat_recent_changes AS
-SELECT
-    hc.change_id,
-    hc.username,
-    hc.hash_type,
-    hc.change_date,
-    hc.sent_to_server,
-    hc.send_date,
-    hc.send_status
-FROM hashcat_hash_changes hc
-WHERE hc.change_date > SYSDATE - 7
-ORDER BY hc.change_date DESC;
-
 -- View: Current user status (based on ptime tracking)
 CREATE OR REPLACE VIEW v_hashcat_user_status AS
 SELECT
@@ -24,23 +10,10 @@ SELECT
     du.account_status,
     us.created_date AS first_seen,
     us.last_ptime AS last_password_change,
-    us.last_checked,
-    (SELECT COUNT(*) FROM hashcat_hash_changes hc
-     WHERE hc.username = us.username) AS total_changes
+    us.last_checked
 FROM hashcat_user_state us
 LEFT JOIN dba_users du ON du.username = us.username
 ORDER BY us.last_checked DESC;
-
--- View: Pending hashes to send
-CREATE OR REPLACE VIEW v_hashcat_pending AS
-SELECT
-    change_id,
-    username,
-    hash_type,
-    change_date
-FROM hashcat_hash_changes
-WHERE sent_to_server = 'N'
-ORDER BY change_date;
 
 -- View: Recent log entries
 CREATE OR REPLACE VIEW v_hashcat_logs AS
@@ -78,34 +51,28 @@ SELECT
 FROM hashcat_user_state
 UNION ALL
 SELECT
-    'Total Hash Changes' AS metric,
+    'Users Checked Today' AS metric,
     TO_CHAR(COUNT(*)) AS value
-FROM hashcat_hash_changes
+FROM hashcat_user_state
+WHERE last_checked > TRUNC(SYSDATE)
 UNION ALL
 SELECT
-    'Pending to Send' AS metric,
+    'Log Entries (24h)' AS metric,
     TO_CHAR(COUNT(*)) AS value
-FROM hashcat_hash_changes
-WHERE sent_to_server = 'N'
+FROM hashcat_log
+WHERE log_date > SYSTIMESTAMP - INTERVAL '1' DAY
 UNION ALL
 SELECT
-    'Successfully Sent' AS metric,
+    'Errors (24h)' AS metric,
     TO_CHAR(COUNT(*)) AS value
-FROM hashcat_hash_changes
-WHERE sent_to_server = 'Y'
-UNION ALL
-SELECT
-    'Changes Today' AS metric,
-    TO_CHAR(COUNT(*)) AS value
-FROM hashcat_hash_changes
-WHERE change_date > TRUNC(SYSDATE);
+FROM hashcat_log
+WHERE log_date > SYSTIMESTAMP - INTERVAL '1' DAY
+  AND log_level = 'ERROR';
 
 PROMPT Helper views created successfully
 PROMPT
 PROMPT Available views:
-PROMPT   - v_hashcat_recent_changes  : Recent password changes (last 7 days)
-PROMPT   - v_hashcat_user_status     : Current status of all monitored users
-PROMPT   - v_hashcat_pending         : Hashes waiting to be sent
-PROMPT   - v_hashcat_logs            : Recent log entries (last 24 hours)
-PROMPT   - v_hashcat_job_status      : Scheduler job status
-PROMPT   - v_hashcat_stats           : Quick statistics summary
+PROMPT   - v_hashcat_user_status  : Current status of all monitored users
+PROMPT   - v_hashcat_logs         : Recent log entries (last 24 hours)
+PROMPT   - v_hashcat_job_status   : Scheduler job status
+PROMPT   - v_hashcat_stats        : Quick statistics summary

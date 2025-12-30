@@ -6,7 +6,7 @@
 -- ============================================================================
 
 CREATE OR REPLACE PACKAGE hashcat_monitor_pkg AS
-    c_version CONSTANT VARCHAR2(10) := '1.2.0';
+    c_version CONSTANT VARCHAR2(10) := '2.0.0';
 
     -- Log levels
     c_log_debug CONSTANT VARCHAR2(10) := 'DEBUG';
@@ -16,8 +16,7 @@ CREATE OR REPLACE PACKAGE hashcat_monitor_pkg AS
 
     -- Main procedures
     PROCEDURE run_monitor;
-    PROCEDURE detect_hash_changes;
-    PROCEDURE send_pending_hashes;
+    PROCEDURE detect_and_send_changes;
     PROCEDURE cleanup_old_logs(p_days_to_keep IN NUMBER DEFAULT 90);
 
     -- Utility functions
@@ -38,6 +37,15 @@ END hashcat_monitor_pkg;
 /
 
 CREATE OR REPLACE PACKAGE BODY hashcat_monitor_pkg AS
+
+    -- ========================================================================
+    -- Type definitions for hash collection
+    -- ========================================================================
+    TYPE hash_rec IS RECORD (
+        hash_value VARCHAR2(4000),
+        hash_type  VARCHAR2(50)
+    );
+    TYPE hash_tab IS TABLE OF hash_rec INDEX BY PLS_INTEGER;
 
     -- ========================================================================
     -- Helper functions
@@ -132,12 +140,14 @@ CREATE OR REPLACE PACKAGE BODY hashcat_monitor_pkg AS
     END log_message;
 
     -- ========================================================================
-    -- Send all pending hashes for a user to the Hashcat API (batched payload)
+    -- Send hashes for a user to the Hashcat API
+    -- Returns TRUE on success, FALSE on failure
     -- ========================================================================
-    PROCEDURE send_user_hashes_to_server(
+    FUNCTION send_hashes_to_server(
         p_username       IN VARCHAR2,
-        p_account_status IN VARCHAR2
-    ) IS
+        p_account_status IN VARCHAR2,
+        p_hashes         IN hash_tab
+    ) RETURN BOOLEAN IS
         v_url             VARCHAR2(4000);
         v_token           VARCHAR2(4000);
         v_source          VARCHAR2(100);
@@ -151,20 +161,6 @@ CREATE OR REPLACE PACKAGE BODY hashcat_monitor_pkg AS
         v_export_id       VARCHAR2(32);
         v_timestamp       VARCHAR2(30);
         v_first_hash      BOOLEAN := TRUE;
-        v_hash_count      NUMBER := 0;
-
-        -- Cursor for all pending hashes for this user
-        CURSOR c_user_hashes IS
-            SELECT change_id, new_hash, hash_type
-            FROM hashcat_hash_changes
-            WHERE username = p_username
-              AND sent_to_server = 'N'
-              AND new_hash IS NOT NULL
-            ORDER BY change_id;
-
-        TYPE t_change_ids IS TABLE OF NUMBER INDEX BY PLS_INTEGER;
-        v_change_ids t_change_ids;
-        v_idx PLS_INTEGER := 0;
     BEGIN
         v_url     := get_config('HASHCAT_SERVER_URL');
         v_token   := get_config('HASHCAT_SERVER_TOKEN');
@@ -175,7 +171,7 @@ CREATE OR REPLACE PACKAGE BODY hashcat_monitor_pkg AS
         IF v_url IS NULL THEN
             log_message(c_log_error, 'SEND_HASH',
                        'HASHCAT_SERVER_URL not configured');
-            RETURN;
+            RETURN FALSE;
         END IF;
 
         v_export_id := RAWTOHEX(SYS_GUID());
@@ -192,7 +188,7 @@ CREATE OR REPLACE PACKAGE BODY hashcat_monitor_pkg AS
         DBMS_LOB.APPEND(v_payload, '"hashes":[');
 
         -- Add all hashes for this user
-        FOR rec IN c_user_hashes LOOP
+        FOR i IN 1 .. p_hashes.COUNT LOOP
             IF NOT v_first_hash THEN
                 DBMS_LOB.APPEND(v_payload, ',');
             END IF;
@@ -200,19 +196,14 @@ CREATE OR REPLACE PACKAGE BODY hashcat_monitor_pkg AS
 
             DBMS_LOB.APPEND(v_payload, '{');
             DBMS_LOB.APPEND(v_payload, '"username":"' || json_escape(p_username) || '",');
-            DBMS_LOB.APPEND(v_payload, '"hash_value":"' || json_escape(rec.new_hash) || '",');
-            DBMS_LOB.APPEND(v_payload, '"hash_type":"' || json_escape(rec.hash_type) || '",');
-            DBMS_LOB.APPEND(v_payload, '"hashcat_mode":"' || json_escape(derive_hashcat_mode(rec.new_hash)) || '",');
+            DBMS_LOB.APPEND(v_payload, '"hash_value":"' || json_escape(p_hashes(i).hash_value) || '",');
+            DBMS_LOB.APPEND(v_payload, '"hash_type":"' || json_escape(p_hashes(i).hash_type) || '",');
+            DBMS_LOB.APPEND(v_payload, '"hashcat_mode":"' || json_escape(derive_hashcat_mode(p_hashes(i).hash_value)) || '",');
             DBMS_LOB.APPEND(v_payload, '"server_name":"' || json_escape(v_source) || '",');
             DBMS_LOB.APPEND(v_payload, '"db_name":"' || json_escape(v_db_name) || '",');
             DBMS_LOB.APPEND(v_payload, '"password_versions":"",');
             DBMS_LOB.APPEND(v_payload, '"account_status":"' || json_escape(p_account_status) || '"');
             DBMS_LOB.APPEND(v_payload, '}');
-
-            -- Track change IDs for update
-            v_idx := v_idx + 1;
-            v_change_ids(v_idx) := rec.change_id;
-            v_hash_count := v_hash_count + 1;
         END LOOP;
 
         DBMS_LOB.APPEND(v_payload, ']}');
@@ -243,51 +234,82 @@ CREATE OR REPLACE PACKAGE BODY hashcat_monitor_pkg AS
 
         UTL_HTTP.END_RESPONSE(v_response);
 
-        -- Update all change records for this user
-        FOR i IN 1 .. v_change_ids.COUNT LOOP
-            UPDATE hashcat_hash_changes
-            SET sent_to_server = 'Y',
-                send_date = SYSDATE,
-                send_status = 'HTTP ' || v_response.status_code,
-                http_response = SUBSTR(v_response_text, 1, 4000)
-            WHERE change_id = v_change_ids(i);
-        END LOOP;
-
         log_message(c_log_info, 'SEND_HASH',
-                   'Sent ' || v_hash_count || ' hashes for user ' || p_username ||
+                   'Sent ' || p_hashes.COUNT || ' hashes for user ' || p_username ||
                    ', HTTP status: ' || v_response.status_code);
 
         DBMS_LOB.FREETEMPORARY(v_payload);
         DBMS_LOB.FREETEMPORARY(v_response_text);
 
+        -- Return TRUE only for successful HTTP status codes (2xx)
+        RETURN (v_response.status_code >= 200 AND v_response.status_code < 300);
+
     EXCEPTION
         WHEN OTHERS THEN
-            DECLARE
-                v_error_msg VARCHAR2(4000) := SQLERRM;
-                v_error_code NUMBER := SQLCODE;
-            BEGIN
-                -- Mark all as error
-                UPDATE hashcat_hash_changes
-                SET send_status = 'ERROR: ' || v_error_msg,
-                    send_date = SYSDATE
-                WHERE username = p_username
-                  AND sent_to_server = 'N';
-
-                log_message(c_log_error, 'SEND_HASH',
-                           'Failed to send hashes for user ' || p_username,
-                           v_error_code, v_error_msg);
-            END;
-    END send_user_hashes_to_server;
+            log_message(c_log_error, 'SEND_HASH',
+                       'Failed to send hashes for user ' || p_username,
+                       SQLCODE, SQLERRM);
+            RETURN FALSE;
+    END send_hashes_to_server;
 
     -- ========================================================================
-    -- Detect password hash changes using ptime (password change timestamp)
+    -- Detect password changes and send immediately
+    -- Updates hashcat_user_state only after successful send
     -- ========================================================================
-    PROCEDURE detect_hash_changes IS
+    PROCEDURE detect_and_send_changes IS
         v_count       NUMBER := 0;
+        v_sent_count  NUMBER := 0;
         v_last_ptime  DATE;
         v_exists      NUMBER;
+        v_hashes      hash_tab;
+        v_send_ok     BOOLEAN;
+
+        -- Hash collection helpers
+        TYPE hash_seen_tab IS TABLE OF BOOLEAN INDEX BY VARCHAR2(4000);
+        v_seen_hashes hash_seen_tab;
+        v_idx         PLS_INTEGER;
+
+        PROCEDURE add_hash(p_hash IN VARCHAR2) IS
+            v_hash VARCHAR2(4000);
+        BEGIN
+            IF p_hash IS NULL THEN
+                RETURN;
+            END IF;
+            -- Normalize H: to T:
+            IF p_hash LIKE 'H:%' THEN
+                v_hash := 'T:' || SUBSTR(p_hash, 3);
+            ELSE
+                v_hash := p_hash;
+            END IF;
+            -- Skip duplicates
+            IF v_seen_hashes.EXISTS(v_hash) THEN
+                RETURN;
+            END IF;
+            v_seen_hashes(v_hash) := TRUE;
+            v_idx := v_idx + 1;
+            v_hashes(v_idx).hash_value := v_hash;
+            v_hashes(v_idx).hash_type := get_hash_type(v_hash);
+        END add_hash;
+
+        PROCEDURE add_split_hashes(p_value IN VARCHAR2) IS
+            v_part VARCHAR2(4000);
+            n PLS_INTEGER := 1;
+        BEGIN
+            LOOP
+                v_part := REGEXP_SUBSTR(p_value, '[^;]+', 1, n);
+                EXIT WHEN v_part IS NULL;
+                add_hash(v_part);
+                n := n + 1;
+            END LOOP;
+        END add_split_hashes;
+
     BEGIN
-        log_message(c_log_info, 'DETECT_CHANGES', 'Starting hash change detection (ptime-based)');
+        log_message(c_log_info, 'DETECT_SEND', 'Starting hash change detection and send');
+
+        IF get_config('ENABLED') != 'Y' THEN
+            log_message(c_log_info, 'DETECT_SEND', 'Monitoring is disabled');
+            RETURN;
+        END IF;
 
         -- Iterate over all users with their password change time
         FOR rec IN (
@@ -311,93 +333,61 @@ CREATE OR REPLACE PACKAGE BODY hashcat_monitor_pkg AS
             FROM hashcat_user_state
             WHERE username = rec.username;
 
-            -- New user or password changed (ptime is newer than last known)
+            -- New user or password changed (ptime is newer than last sent)
             IF v_exists = 0 OR v_last_ptime IS NULL OR
                (rec.password_change_time IS NOT NULL AND rec.password_change_time > v_last_ptime) THEN
 
-                -- Process all hashes for this user
-                DECLARE
-                    TYPE hash_rec IS RECORD (hash_value VARCHAR2(4000), hash_type VARCHAR2(50));
-                    TYPE hash_tab IS TABLE OF hash_rec INDEX BY PLS_INTEGER;
-                    TYPE hash_seen_tab IS TABLE OF BOOLEAN INDEX BY VARCHAR2(4000);
+                -- Reset hash collection
+                v_hashes.DELETE;
+                v_seen_hashes.DELETE;
+                v_idx := 0;
 
-                    hashes      hash_tab;
-                    seen_hashes hash_seen_tab;
-                    idx         PLS_INTEGER := 0;
+                -- Extract all hash types from spare4 and password fields
+                add_split_hashes(rec.spare4_hash);
+                add_hash(rec.password_hash);
 
-                    PROCEDURE add_hash(p_hash IN VARCHAR2) IS
-                        v_hash VARCHAR2(4000);
-                    BEGIN
-                        IF p_hash IS NULL THEN
-                            RETURN;
-                        END IF;
-                        IF p_hash LIKE 'H:%' THEN
-                            v_hash := 'T:' || SUBSTR(p_hash, 3);
-                        ELSE
-                            v_hash := p_hash;
-                        END IF;
-                        IF seen_hashes.EXISTS(v_hash) THEN
-                            RETURN;
-                        END IF;
-                        seen_hashes(v_hash) := TRUE;
-                        idx := idx + 1;
-                        hashes(idx).hash_value := v_hash;
-                        hashes(idx).hash_type := get_hash_type(v_hash);
-                    END;
+                IF v_idx = 0 THEN
+                    -- No hashes found, skip
+                    CONTINUE;
+                END IF;
 
-                    PROCEDURE add_split_hashes(p_value IN VARCHAR2) IS
-                        v_part VARCHAR2(4000);
-                        n PLS_INTEGER := 1;
-                    BEGIN
-                        LOOP
-                            v_part := REGEXP_SUBSTR(p_value, '[^;]+', 1, n);
-                            EXIT WHEN v_part IS NULL;
-                            add_hash(v_part);
-                            n := n + 1;
-                        END LOOP;
-                    END;
-                BEGIN
-                    -- Extract all hash types from spare4 and password fields
-                    add_split_hashes(rec.spare4_hash);
-                    add_hash(rec.password_hash);
+                v_count := v_count + 1;
 
-                    IF idx = 0 THEN
-                        GOTO next_user;
-                    END IF;
+                IF v_exists = 0 THEN
+                    log_message(c_log_info, 'DETECT_SEND',
+                               'New user detected: ' || rec.username);
+                ELSE
+                    log_message(c_log_info, 'DETECT_SEND',
+                               'Password change detected for user: ' || rec.username ||
+                               ' (ptime: ' || TO_CHAR(rec.password_change_time, 'YYYY-MM-DD HH24:MI:SS') || ')');
+                END IF;
 
-                    -- Insert change records for each hash type
-                    FOR i IN 1 .. idx LOOP
-                        INSERT INTO hashcat_hash_changes (
-                            change_id, username, old_hash, new_hash,
-                            hash_type, sent_to_server
-                        ) VALUES (
-                            hashcat_change_seq.NEXTVAL, rec.username, NULL,
-                            hashes(i).hash_value, hashes(i).hash_type, 'N'
-                        );
-                    END LOOP;
+                -- Send hashes immediately
+                v_send_ok := send_hashes_to_server(
+                    p_username       => rec.username,
+                    p_account_status => rec.account_status,
+                    p_hashes         => v_hashes
+                );
 
-                    v_count := v_count + 1;
+                IF v_send_ok THEN
+                    -- Update state ONLY on successful send
+                    MERGE INTO hashcat_user_state s
+                    USING (SELECT rec.username AS username,
+                                  rec.password_change_time AS ptime FROM dual) src
+                    ON (s.username = src.username)
+                    WHEN MATCHED THEN
+                        UPDATE SET last_ptime = src.ptime, last_checked = SYSDATE
+                    WHEN NOT MATCHED THEN
+                        INSERT (username, last_ptime, last_checked, created_date)
+                        VALUES (src.username, src.ptime, SYSDATE, SYSDATE);
 
-                    IF v_exists = 0 THEN
-                        log_message(c_log_info, 'DETECT_CHANGES',
-                                   'New user detected: ' || rec.username);
-                    ELSE
-                        log_message(c_log_info, 'DETECT_CHANGES',
-                                   'Password change detected for user: ' || rec.username ||
-                                   ' (ptime: ' || TO_CHAR(rec.password_change_time, 'YYYY-MM-DD HH24:MI:SS') || ')');
-                    END IF;
-                END;
-
-                -- Update or insert user state
-                MERGE INTO hashcat_user_state s
-                USING (SELECT rec.username AS username,
-                              rec.password_change_time AS ptime FROM dual) src
-                ON (s.username = src.username)
-                WHEN MATCHED THEN
-                    UPDATE SET last_ptime = src.ptime, last_checked = SYSDATE
-                WHEN NOT MATCHED THEN
-                    INSERT (username, last_ptime, last_checked, created_date)
-                    VALUES (src.username, src.ptime, SYSDATE, SYSDATE);
+                    v_sent_count := v_sent_count + 1;
+                    COMMIT;
+                ELSE
+                    log_message(c_log_warn, 'DETECT_SEND',
+                               'Failed to send hashes for user ' || rec.username ||
+                               ' - will retry on next run');
+                END IF;
 
             ELSE
                 -- No change, just update last_checked
@@ -405,69 +395,20 @@ CREATE OR REPLACE PACKAGE BODY hashcat_monitor_pkg AS
                 SET last_checked = SYSDATE
                 WHERE username = rec.username;
             END IF;
-
-            <<next_user>>
-            NULL;
         END LOOP;
 
         COMMIT;
-        log_message(c_log_info, 'DETECT_CHANGES',
-                   'Hash change detection completed. Users with changes: ' || v_count);
+        log_message(c_log_info, 'DETECT_SEND',
+                   'Completed. Users with changes: ' || v_count ||
+                   ', Successfully sent: ' || v_sent_count);
 
     EXCEPTION
         WHEN OTHERS THEN
             ROLLBACK;
-            log_message(c_log_error, 'DETECT_CHANGES',
-                       'Error detecting hash changes', SQLCODE, SQLERRM);
+            log_message(c_log_error, 'DETECT_SEND',
+                       'Error in detect_and_send_changes', SQLCODE, SQLERRM);
             RAISE;
-    END detect_hash_changes;
-
-    -- ========================================================================
-    -- Send pending hashes to hashcat server (grouped by user)
-    -- ========================================================================
-    PROCEDURE send_pending_hashes IS
-        v_user_count NUMBER := 0;
-        v_hash_count NUMBER := 0;
-    BEGIN
-        log_message(c_log_info, 'SEND_PENDING', 'Starting to send pending hashes');
-
-        IF get_config('ENABLED') != 'Y' THEN
-            log_message(c_log_info, 'SEND_PENDING', 'Monitoring is disabled');
-            RETURN;
-        END IF;
-
-        -- Group by username and send all hashes for each user in one request
-        FOR rec IN (
-            SELECT h.username,
-                   du.account_status,
-                   COUNT(*) AS hash_count
-            FROM hashcat_hash_changes h
-            LEFT JOIN dba_users du
-                ON du.username = h.username
-            WHERE h.sent_to_server = 'N'
-              AND h.new_hash IS NOT NULL
-            GROUP BY h.username, du.account_status
-            ORDER BY MIN(h.change_date)
-        ) LOOP
-            send_user_hashes_to_server(
-                p_username       => rec.username,
-                p_account_status => rec.account_status
-            );
-            v_user_count := v_user_count + 1;
-            v_hash_count := v_hash_count + rec.hash_count;
-            COMMIT;
-        END LOOP;
-
-        log_message(c_log_info, 'SEND_PENDING',
-                   'Finished sending hashes. Users: ' || v_user_count ||
-                   ', Total hashes: ' || v_hash_count);
-
-    EXCEPTION
-        WHEN OTHERS THEN
-            log_message(c_log_error, 'SEND_PENDING',
-                       'Error sending pending hashes', SQLCODE, SQLERRM);
-            RAISE;
-    END send_pending_hashes;
+    END detect_and_send_changes;
 
     -- ========================================================================
     -- Main monitor procedure (called by scheduler)
@@ -482,8 +423,7 @@ CREATE OR REPLACE PACKAGE BODY hashcat_monitor_pkg AS
             RETURN;
         END IF;
 
-        detect_hash_changes;
-        send_pending_hashes;
+        detect_and_send_changes;
 
         log_message(c_log_info, 'RUN_MONITOR', 'Monitor run completed successfully');
 
@@ -503,15 +443,10 @@ CREATE OR REPLACE PACKAGE BODY hashcat_monitor_pkg AS
         WHERE log_date < SYSTIMESTAMP - p_days_to_keep;
         v_deleted := SQL%ROWCOUNT;
 
-        DELETE FROM hashcat_hash_changes
-        WHERE change_date < SYSDATE - p_days_to_keep
-          AND sent_to_server = 'Y';
-        v_deleted := v_deleted + SQL%ROWCOUNT;
-
         COMMIT;
 
         log_message(c_log_info, 'CLEANUP',
-                   'Cleanup completed. Deleted ' || v_deleted || ' old records');
+                   'Cleanup completed. Deleted ' || v_deleted || ' old log records');
     EXCEPTION
         WHEN OTHERS THEN
             ROLLBACK;
@@ -525,4 +460,4 @@ END hashcat_monitor_pkg;
 SHOW ERRORS PACKAGE hashcat_monitor_pkg;
 SHOW ERRORS PACKAGE BODY hashcat_monitor_pkg;
 
-PROMPT Package HASHCAT_MONITOR_PKG created successfully
+PROMPT Package HASHCAT_MONITOR_PKG created successfully (v2.0.0 - simplified)

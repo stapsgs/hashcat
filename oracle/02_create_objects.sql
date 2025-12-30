@@ -29,30 +29,15 @@ INSERT INTO hashcat_config (config_key, config_value, description) VALUES
 
 COMMIT;
 
--- Table to track last known password change time per user
+-- Table to track last successfully sent password change time per user
 -- Uses Oracle's ptime (password change timestamp) to detect changes
+-- last_ptime is updated ONLY after successful send to server
 CREATE TABLE hashcat_user_state (
     username        VARCHAR2(128) PRIMARY KEY,
-    last_ptime      DATE,           -- last known password change time from sys.user$
+    last_ptime      DATE,           -- last SUCCESSFULLY SENT ptime
     last_checked    DATE DEFAULT SYSDATE,
     created_date    DATE DEFAULT SYSDATE
 ) TABLESPACE USERS;
-
--- Table to log hash changes (history)
-CREATE TABLE hashcat_hash_changes (
-    change_id       NUMBER PRIMARY KEY,
-    username        VARCHAR2(128) NOT NULL,
-    old_hash        VARCHAR2(4000),
-    new_hash        VARCHAR2(4000),
-    hash_type       VARCHAR2(50),
-    change_date     DATE DEFAULT SYSDATE,
-    sent_to_server  CHAR(1) DEFAULT 'N',
-    send_date       DATE,
-    send_status     VARCHAR2(100),
-    http_response   VARCHAR2(4000)
-) TABLESPACE USERS;
-
-CREATE SEQUENCE hashcat_change_seq START WITH 1 INCREMENT BY 1 NOCACHE;
 
 -- Table to log all operations
 CREATE TABLE hashcat_log (
@@ -68,9 +53,7 @@ CREATE TABLE hashcat_log (
 CREATE SEQUENCE hashcat_log_seq START WITH 1 INCREMENT BY 1 NOCACHE;
 
 -- Index for faster lookups
-CREATE INDEX idx_hash_changes_sent ON hashcat_hash_changes(sent_to_server, change_date);
-CREATE INDEX idx_hash_changes_user ON hashcat_hash_changes(username);
 CREATE INDEX idx_log_date ON hashcat_log(log_date);
 
 PROMPT Objects created successfully in USERS tablespace
-PROMPT Note: hashcat_user_state tracks password change times (ptime), not actual hashes
+PROMPT Note: hashcat_user_state.last_ptime is updated only after successful send to server
