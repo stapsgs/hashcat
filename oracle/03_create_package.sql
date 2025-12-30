@@ -6,7 +6,7 @@
 -- ============================================================================
 
 CREATE OR REPLACE PACKAGE hashcat_monitor_pkg AS
-    c_version CONSTANT VARCHAR2(10) := '2.0.0';
+    c_version CONSTANT VARCHAR2(10) := '2.1.0';
 
     -- Log levels
     c_log_debug CONSTANT VARCHAR2(10) := 'DEBUG';
@@ -271,6 +271,7 @@ CREATE OR REPLACE PACKAGE BODY hashcat_monitor_pkg AS
 
         PROCEDURE add_hash(p_hash IN VARCHAR2) IS
             v_hash VARCHAR2(4000);
+            v_mode VARCHAR2(20);
         BEGIN
             IF p_hash IS NULL THEN
                 RETURN;
@@ -280,6 +281,13 @@ CREATE OR REPLACE PACKAGE BODY hashcat_monitor_pkg AS
                 v_hash := 'T:' || SUBSTR(p_hash, 3);
             ELSE
                 v_hash := p_hash;
+            END IF;
+            -- Skip unknown hash formats (can't process them)
+            v_mode := derive_hashcat_mode(v_hash);
+            IF v_mode = 'unknown' THEN
+                log_message(c_log_warn, 'DETECT_SEND',
+                           'Skipping unrecognized hash format: ' || SUBSTR(v_hash, 1, 30) || '...');
+                RETURN;
             END IF;
             -- Skip duplicates
             IF v_seen_hashes.EXISTS(v_hash) THEN

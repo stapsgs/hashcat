@@ -1,0 +1,1095 @@
+2025-12-30 02:35:00,189 [INFO] Received submission from ORACLE_PROD/testfsfo with 3 hashes (encrypted: False)
+2025-12-30 02:35:00,190 [INFO] Processing job 7fb7613a-2eb2-4648-8483-056774c4bbd3 with 3 hashes
+2025-12-30 02:35:00,190 [INFO] Testing TRANLOAD (SHA1)
+2025-12-30 02:35:00,191 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:35:00,209 [INFO] Received submission from ORACLE_PROD/testfsfo with 3 hashes (encrypted: False)
+2025-12-30 02:35:00,213 [INFO] Received submission from ORACLE_PROD/testfsfo with 3 hashes (encrypted: False)
+2025-12-30 02:35:00,217 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,221 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,225 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,228 [INFO] Received submission from ORACLE_PROD/testfsfo with 3 hashes (encrypted: False)
+2025-12-30 02:35:00,232 [INFO] Received submission from ORACLE_PROD/testfsfo with 3 hashes (encrypted: False)
+2025-12-30 02:35:00,235 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,239 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,242 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,246 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,250 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,254 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,258 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,262 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,266 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,269 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,273 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,276 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,280 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,284 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,288 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,292 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,295 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,299 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,302 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,307 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,312 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,316 [INFO] Received submission from ORACLE_PROD/testfsfo with 1 hashes (encrypted: False)
+2025-12-30 02:35:00,320 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,323 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,327 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,330 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,334 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,338 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:00,341 [INFO] Received submission from ORACLE_PROD/testfsfo with 4 hashes (encrypted: False)
+2025-12-30 02:35:03,060 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:35:08,917 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=51s
+2025-12-30 02:35:11,761 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=48s
+2025-12-30 02:35:14,601 [INFO] Testing TRANLOAD (SHA512)
+2025-12-30 02:35:14,602 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:36:15,965 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 02:36:15,965 [INFO] Testing TRANLOAD (DES)
+2025-12-30 02:36:15,966 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:36:19,820 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=56s
+2025-12-30 02:36:27,677 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=48s
+2025-12-30 02:36:31,511 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=44s
+2025-12-30 02:36:34,370 [INFO] Job 7fb7613a-2eb2-4648-8483-056774c4bbd3 completed: 0/3 cracked
+2025-12-30 02:36:34,370 [INFO] Processing job 6a3ad184-3482-49c0-901a-9d70b0c3509b with 3 hashes
+2025-12-30 02:36:34,370 [INFO] Testing TESTHASH (SHA1)
+2025-12-30 02:36:34,371 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:36:37,222 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:36:42,072 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 02:36:44,921 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 02:36:47,773 [INFO] Testing TESTHASH (SHA512)
+2025-12-30 02:36:47,773 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:37:50,172 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 02:37:50,173 [INFO] Testing TESTHASH (DES)
+2025-12-30 02:37:50,173 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:37:54,014 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=56s
+2025-12-30 02:38:01,894 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=48s
+2025-12-30 02:38:05,752 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=44s
+2025-12-30 02:38:08,614 [INFO] Job 6a3ad184-3482-49c0-901a-9d70b0c3509b completed: 0/3 cracked
+2025-12-30 02:38:08,614 [INFO] Processing job aa910179-5800-496e-927d-70137e604608 with 3 hashes
+2025-12-30 02:38:08,614 [INFO] Testing SCOTT (SHA1)
+2025-12-30 02:38:08,614 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:38:10,472 [WARNING] CRACKED: SCOTT (SHA1)
+2025-12-30 02:38:10,472 [INFO] Testing SCOTT (SHA512)
+2025-12-30 02:38:10,472 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:38:12,773 [WARNING] CRACKED: SCOTT (SHA512)
+2025-12-30 02:38:12,773 [INFO] Testing SCOTT (DES)
+2025-12-30 02:38:12,773 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:38:14,600 [WARNING] CRACKED: SCOTT (DES)
+2025-12-30 02:38:14,601 [INFO] Job aa910179-5800-496e-927d-70137e604608 completed: 3/3 cracked
+2025-12-30 02:38:14,601 [INFO] Processing job 8b61efa1-0519-454a-be98-1383cb5aff78 with 4 hashes
+2025-12-30 02:38:14,601 [INFO] Testing ORACLE_OCM (SHA1)
+2025-12-30 02:38:14,602 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:38:17,436 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:38:22,280 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 02:38:25,128 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 02:38:26,960 [INFO] Testing ORACLE_OCM (SHA512)
+2025-12-30 02:38:26,961 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:38:27,150 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:38:27,150 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 02:38:27,347 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:38:27,347 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 02:38:27,541 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:38:27,541 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 02:38:27,738 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:38:27,738 [INFO] Testing ORACLE_OCM (SHA512)
+2025-12-30 02:38:27,739 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:39:29,115 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 02:39:29,115 [INFO] Testing ORACLE_OCM (DES)
+2025-12-30 02:39:29,116 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:39:32,971 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=56s
+2025-12-30 02:39:40,825 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=48s
+2025-12-30 02:39:44,665 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=44s
+2025-12-30 02:39:47,521 [INFO] Job 8b61efa1-0519-454a-be98-1383cb5aff78 completed: 0/4 cracked
+2025-12-30 02:39:47,522 [INFO] Processing job 56a08384-fa66-4a1b-a17c-09ba06509148 with 4 hashes
+2025-12-30 02:39:47,522 [INFO] Testing OJVMSYS (SHA1)
+2025-12-30 02:39:47,522 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:39:49,376 [WARNING] CRACKED: OJVMSYS (SHA1)
+2025-12-30 02:39:49,376 [INFO] Testing OJVMSYS (SHA512)
+2025-12-30 02:39:49,376 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:39:49,568 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:39:49,568 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 02:39:49,759 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:39:49,759 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 02:39:49,949 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:39:49,950 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 02:39:50,140 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:39:50,140 [INFO] Testing OJVMSYS (SHA512)
+2025-12-30 02:39:50,141 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:39:52,451 [WARNING] CRACKED: OJVMSYS (SHA512)
+2025-12-30 02:39:52,452 [INFO] Testing OJVMSYS (DES)
+2025-12-30 02:39:52,452 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:39:54,306 [WARNING] CRACKED: OJVMSYS (DES)
+2025-12-30 02:39:54,306 [INFO] Job 56a08384-fa66-4a1b-a17c-09ba06509148 completed: 3/4 cracked
+2025-12-30 02:39:54,307 [INFO] Processing job 1cf293d1-2318-47c4-88ca-df0a2de7b9c1 with 4 hashes
+2025-12-30 02:39:54,307 [INFO] Testing SYSKM (SHA1)
+2025-12-30 02:39:54,307 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:39:57,157 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:40:02,003 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 02:40:04,847 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 02:40:06,678 [INFO] Testing SYSKM (SHA512)
+2025-12-30 02:40:06,679 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:40:06,869 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:40:06,870 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 02:40:07,065 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:40:07,065 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 02:40:07,266 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:40:07,267 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 02:40:07,469 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:40:07,469 [INFO] Testing SYSKM (SHA512)
+2025-12-30 02:40:07,470 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:41:08,846 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 02:41:08,846 [INFO] Testing SYSKM (DES)
+2025-12-30 02:41:08,847 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:41:11,687 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:41:19,550 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=49s
+2025-12-30 02:41:23,400 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=45s
+2025-12-30 02:41:26,255 [INFO] Job 1cf293d1-2318-47c4-88ca-df0a2de7b9c1 completed: 0/4 cracked
+2025-12-30 02:41:26,256 [INFO] Processing job b1151015-dc8b-49c3-b890-b09d94d1c899 with 3 hashes
+2025-12-30 02:41:26,256 [INFO] Testing WORDLIST (SHA1)
+2025-12-30 02:41:26,256 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:41:29,121 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:41:33,983 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 02:41:36,811 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 02:41:39,655 [INFO] Testing WORDLIST (SHA512)
+2025-12-30 02:41:39,656 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:42:41,037 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 02:42:41,038 [INFO] Testing WORDLIST (DES)
+2025-12-30 02:42:41,038 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:42:44,877 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=56s
+2025-12-30 02:42:52,723 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=48s
+2025-12-30 02:42:56,566 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=44s
+2025-12-30 02:42:59,417 [INFO] Job b1151015-dc8b-49c3-b890-b09d94d1c899 completed: 0/3 cracked
+2025-12-30 02:42:59,417 [INFO] Processing job 3ca87138-f5cc-4a9c-bca1-255dba217b16 with 3 hashes
+2025-12-30 02:42:59,417 [INFO] Testing IKAKUBAVA (SHA1)
+2025-12-30 02:42:59,418 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:43:02,267 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:43:07,098 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 02:43:09,943 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 02:43:12,782 [INFO] Testing IKAKUBAVA (SHA512)
+2025-12-30 02:43:12,782 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:44:15,147 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 02:44:15,147 [INFO] Testing IKAKUBAVA (DES)
+2025-12-30 02:44:15,148 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:44:19,021 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=56s
+2025-12-30 02:44:26,888 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=48s
+2025-12-30 02:44:30,749 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=44s
+2025-12-30 02:44:33,614 [INFO] Job 3ca87138-f5cc-4a9c-bca1-255dba217b16 completed: 0/3 cracked
+2025-12-30 02:44:33,614 [INFO] Processing job 01254cc4-70dc-4731-b4ea-057da81c0064 with 4 hashes
+2025-12-30 02:44:33,614 [INFO] Testing GSMCATUSER (SHA1)
+2025-12-30 02:44:33,615 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:44:35,454 [WARNING] CRACKED: GSMCATUSER (SHA1)
+2025-12-30 02:44:35,454 [INFO] Testing GSMCATUSER (SHA512)
+2025-12-30 02:44:35,454 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:44:35,651 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:44:35,651 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 02:44:35,846 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:44:35,846 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 02:44:36,038 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:44:36,039 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 02:44:36,243 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:44:36,244 [INFO] Testing GSMCATUSER (SHA512)
+2025-12-30 02:44:36,244 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:45:27,597 [WARNING] CRACKED: GSMCATUSER (SHA512)
+2025-12-30 02:45:27,597 [INFO] Testing GSMCATUSER (DES)
+2025-12-30 02:45:27,598 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:45:29,439 [WARNING] CRACKED: GSMCATUSER (DES)
+2025-12-30 02:45:29,440 [INFO] Job 01254cc4-70dc-4731-b4ea-057da81c0064 completed: 3/4 cracked
+2025-12-30 02:45:29,440 [INFO] Processing job 262ec73c-1d5a-4eef-bed8-534e1d5e8c94 with 4 hashes
+2025-12-30 02:45:29,440 [INFO] Testing MDDATA (SHA1)
+2025-12-30 02:45:29,440 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:45:32,279 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:45:37,133 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 02:45:39,967 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 02:45:41,817 [INFO] Testing MDDATA (SHA512)
+2025-12-30 02:45:41,817 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:45:42,008 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:45:42,008 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 02:45:42,206 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:45:42,206 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 02:45:42,396 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:45:42,397 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 02:45:42,594 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:45:42,594 [INFO] Testing MDDATA (SHA512)
+2025-12-30 02:45:42,595 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:46:43,944 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 02:46:43,945 [INFO] Testing MDDATA (DES)
+2025-12-30 02:46:43,945 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:46:46,794 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:46:54,642 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=49s
+2025-12-30 02:46:58,485 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=45s
+2025-12-30 02:47:01,365 [INFO] Job 262ec73c-1d5a-4eef-bed8-534e1d5e8c94 completed: 0/4 cracked
+2025-12-30 02:47:01,366 [INFO] Processing job ef115404-1dcf-43ca-bf06-348073c5dff8 with 4 hashes
+2025-12-30 02:47:01,366 [INFO] Testing SYSBACKUP (SHA1)
+2025-12-30 02:47:01,366 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:47:04,207 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:47:09,045 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 02:47:11,907 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 02:47:13,757 [INFO] Testing SYSBACKUP (SHA512)
+2025-12-30 02:47:13,757 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:47:13,950 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:47:13,951 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 02:47:14,155 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:47:14,156 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 02:47:14,357 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:47:14,357 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 02:47:14,560 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:47:14,561 [INFO] Testing SYSBACKUP (SHA512)
+2025-12-30 02:47:14,561 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:48:15,960 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 02:48:15,960 [INFO] Testing SYSBACKUP (DES)
+2025-12-30 02:48:15,961 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:48:19,807 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=56s
+2025-12-30 02:48:27,677 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=48s
+2025-12-30 02:48:31,538 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=44s
+2025-12-30 02:48:34,386 [INFO] Job ef115404-1dcf-43ca-bf06-348073c5dff8 completed: 0/4 cracked
+2025-12-30 02:48:34,386 [INFO] Processing job a5ce2c10-8f89-4bcd-b377-176bab01f372 with 4 hashes
+2025-12-30 02:48:34,386 [INFO] Testing DIP (SHA1)
+2025-12-30 02:48:34,387 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:48:36,230 [WARNING] CRACKED: DIP (SHA1)
+2025-12-30 02:48:36,230 [INFO] Testing DIP (SHA512)
+2025-12-30 02:48:36,231 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:48:36,420 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:48:36,421 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 02:48:36,621 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:48:36,621 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 02:48:36,814 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:48:36,815 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 02:48:37,006 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:48:37,007 [INFO] Testing DIP (SHA512)
+2025-12-30 02:48:37,008 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:49:12,368 [WARNING] CRACKED: DIP (SHA512)
+2025-12-30 02:49:12,368 [INFO] Testing DIP (DES)
+2025-12-30 02:49:12,369 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:49:14,221 [WARNING] CRACKED: DIP (DES)
+2025-12-30 02:49:14,222 [INFO] Job a5ce2c10-8f89-4bcd-b377-176bab01f372 completed: 3/4 cracked
+2025-12-30 02:49:14,222 [INFO] Processing job ec9d645f-f1c1-4c13-adab-87cdf2ee958a with 4 hashes
+2025-12-30 02:49:14,222 [INFO] Testing SYSDG (SHA1)
+2025-12-30 02:49:14,223 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:49:17,069 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:49:21,913 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 02:49:24,762 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 02:49:26,611 [INFO] Testing SYSDG (SHA512)
+2025-12-30 02:49:26,612 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:49:26,803 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:49:26,804 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 02:49:26,994 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:49:26,994 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 02:49:27,183 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:49:27,184 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 02:49:27,376 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:49:27,377 [INFO] Testing SYSDG (SHA512)
+2025-12-30 02:49:27,377 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:50:28,740 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 02:50:28,741 [INFO] Testing SYSDG (DES)
+2025-12-30 02:50:28,742 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:50:31,589 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:50:39,431 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=49s
+2025-12-30 02:50:43,294 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=45s
+2025-12-30 02:50:46,133 [INFO] Job ec9d645f-f1c1-4c13-adab-87cdf2ee958a completed: 0/4 cracked
+2025-12-30 02:50:46,133 [INFO] Processing job 9ba848f1-4129-4034-ae88-be77e6413957 with 4 hashes
+2025-12-30 02:50:46,133 [INFO] Testing APEX_PUBLIC_USER (SHA1)
+2025-12-30 02:50:46,134 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:50:48,978 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:50:53,829 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 02:50:56,663 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 02:50:58,497 [INFO] Testing APEX_PUBLIC_USER (SHA512)
+2025-12-30 02:50:58,497 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:50:58,688 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:50:58,689 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 02:50:58,890 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:50:58,890 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 02:50:59,091 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:50:59,091 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 02:50:59,293 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:50:59,294 [INFO] Testing APEX_PUBLIC_USER (SHA512)
+2025-12-30 02:50:59,294 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:52:00,706 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 02:52:00,706 [INFO] Testing APEX_PUBLIC_USER (DES)
+2025-12-30 02:52:00,707 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:52:04,566 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=56s
+2025-12-30 02:52:13,419 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=47s
+2025-12-30 02:52:17,288 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=43s
+2025-12-30 02:52:20,144 [INFO] Job 9ba848f1-4129-4034-ae88-be77e6413957 completed: 0/4 cracked
+2025-12-30 02:52:20,144 [INFO] Processing job 13ab3966-aea3-4e46-889d-dd174c665b66 with 4 hashes
+2025-12-30 02:52:20,144 [INFO] Testing SPATIAL_CSW_ADMIN_USR (SHA1)
+2025-12-30 02:52:20,144 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:52:22,980 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:52:27,837 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 02:52:30,697 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 02:52:32,548 [INFO] Testing SPATIAL_CSW_ADMIN_USR (SHA512)
+2025-12-30 02:52:32,548 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:52:32,737 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:52:32,738 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 02:52:32,931 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:52:32,932 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 02:52:33,124 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:52:33,124 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 02:52:33,329 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:52:33,330 [INFO] Testing SPATIAL_CSW_ADMIN_USR (SHA512)
+2025-12-30 02:52:33,330 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:53:34,694 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 02:53:34,695 [INFO] Testing SPATIAL_CSW_ADMIN_USR (DES)
+2025-12-30 02:53:34,695 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:53:38,549 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=56s
+2025-12-30 02:53:48,415 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=46s
+2025-12-30 02:53:52,271 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=42s
+2025-12-30 02:53:56,138 [INFO] Job 13ab3966-aea3-4e46-889d-dd174c665b66 completed: 0/4 cracked
+2025-12-30 02:53:56,139 [INFO] Processing job 107109a2-a601-43ed-925d-66dffe37c283 with 4 hashes
+2025-12-30 02:53:56,139 [INFO] Testing SPATIAL_WFS_ADMIN_USR (SHA1)
+2025-12-30 02:53:56,139 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:53:58,993 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:54:03,842 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 02:54:06,684 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 02:54:09,520 [INFO] Testing SPATIAL_WFS_ADMIN_USR (SHA512)
+2025-12-30 02:54:09,521 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:54:09,710 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:54:09,710 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 02:54:09,905 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:54:09,906 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 02:54:10,096 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:54:10,096 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 02:54:10,297 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:54:10,298 [INFO] Testing SPATIAL_WFS_ADMIN_USR (SHA512)
+2025-12-30 02:54:10,298 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:55:11,640 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 02:55:11,640 [INFO] Testing SPATIAL_WFS_ADMIN_USR (DES)
+2025-12-30 02:55:11,641 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:55:15,491 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=56s
+2025-12-30 02:55:25,349 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=46s
+2025-12-30 02:55:29,190 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=42s
+2025-12-30 02:55:33,025 [INFO] Job 107109a2-a601-43ed-925d-66dffe37c283 completed: 0/4 cracked
+2025-12-30 02:55:33,025 [INFO] Processing job 6ac11a71-482e-4db9-9407-d4d2b940950b with 4 hashes
+2025-12-30 02:55:33,025 [INFO] Testing GSMUSER (SHA1)
+2025-12-30 02:55:33,026 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:55:34,860 [WARNING] CRACKED: GSMUSER (SHA1)
+2025-12-30 02:55:34,861 [INFO] Testing GSMUSER (SHA512)
+2025-12-30 02:55:34,861 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:55:35,056 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:55:35,056 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 02:55:35,246 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:55:35,247 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 02:55:35,443 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:55:35,443 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 02:55:35,646 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:55:35,646 [INFO] Testing GSMUSER (SHA512)
+2025-12-30 02:55:35,647 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:56:27,007 [WARNING] CRACKED: GSMUSER (SHA512)
+2025-12-30 02:56:27,007 [INFO] Testing GSMUSER (DES)
+2025-12-30 02:56:27,007 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:56:28,848 [WARNING] CRACKED: GSMUSER (DES)
+2025-12-30 02:56:28,849 [INFO] Job 6ac11a71-482e-4db9-9407-d4d2b940950b completed: 3/4 cracked
+2025-12-30 02:56:28,849 [INFO] Processing job f4b27de7-6810-4887-aaae-cef9be1d5580 with 4 hashes
+2025-12-30 02:56:28,849 [INFO] Testing AUDSYS (SHA1)
+2025-12-30 02:56:28,849 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:56:31,684 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:56:36,520 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 02:56:39,371 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 02:56:41,217 [INFO] Testing AUDSYS (SHA512)
+2025-12-30 02:56:41,218 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:56:41,421 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:56:41,421 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 02:56:41,623 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:56:41,623 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 02:56:41,815 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:56:41,816 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 02:56:42,006 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:56:42,006 [INFO] Testing AUDSYS (SHA512)
+2025-12-30 02:56:42,007 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:57:43,376 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 02:57:43,377 [INFO] Testing AUDSYS (DES)
+2025-12-30 02:57:43,377 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:57:46,230 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:57:54,070 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=49s
+2025-12-30 02:57:57,918 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=45s
+2025-12-30 02:58:00,778 [INFO] Job f4b27de7-6810-4887-aaae-cef9be1d5580 completed: 0/4 cracked
+2025-12-30 02:58:00,778 [INFO] Processing job 866466fc-a32a-450a-83e9-b07ac5359793 with 4 hashes
+2025-12-30 02:58:00,778 [INFO] Testing FLOWS_FILES (SHA1)
+2025-12-30 02:58:00,779 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=60s
+2025-12-30 02:58:03,618 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:58:08,476 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 02:58:11,324 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 02:58:14,181 [INFO] Testing FLOWS_FILES (SHA512)
+2025-12-30 02:58:14,181 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:58:14,372 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:58:14,372 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 02:58:14,573 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:58:14,573 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 02:58:14,778 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:58:14,778 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 02:58:14,979 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:58:14,980 [INFO] Testing FLOWS_FILES (SHA512)
+2025-12-30 02:58:14,980 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:59:16,366 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 02:59:16,367 [INFO] Testing FLOWS_FILES (DES)
+2025-12-30 02:59:16,367 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:59:20,212 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=56s
+2025-12-30 02:59:29,073 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=47s
+2025-12-30 02:59:32,923 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=43s
+2025-12-30 02:59:35,759 [INFO] Job 866466fc-a32a-450a-83e9-b07ac5359793 completed: 0/4 cracked
+2025-12-30 02:59:35,759 [INFO] Processing job 2df331ea-e2d5-490b-8747-0af4ada3d6b4 with 4 hashes
+2025-12-30 02:59:35,760 [INFO] Testing DVF (SHA1)
+2025-12-30 02:59:35,760 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:59:38,611 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 02:59:43,471 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 02:59:46,323 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 02:59:49,158 [INFO] Testing DVF (SHA512)
+2025-12-30 02:59:49,158 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 02:59:49,347 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:59:49,347 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 02:59:49,538 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:59:49,539 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 02:59:49,730 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:59:49,731 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 02:59:49,923 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 02:59:49,924 [INFO] Testing DVF (SHA512)
+2025-12-30 02:59:49,924 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:00:51,289 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 03:00:51,290 [INFO] Testing DVF (DES)
+2025-12-30 03:00:51,290 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:00:54,124 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:01:01,966 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=49s
+2025-12-30 03:01:05,827 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=45s
+2025-12-30 03:01:08,666 [INFO] Job 2df331ea-e2d5-490b-8747-0af4ada3d6b4 completed: 0/4 cracked
+2025-12-30 03:01:08,666 [INFO] Processing job 2a86253a-4fa5-4052-b4f1-4f50eb3648c8 with 4 hashes
+2025-12-30 03:01:08,666 [INFO] Testing MDSYS (SHA1)
+2025-12-30 03:01:08,667 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:01:11,511 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:01:16,360 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 03:01:19,197 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 03:01:22,062 [INFO] Testing MDSYS (SHA512)
+2025-12-30 03:01:22,062 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:01:22,254 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:01:22,254 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 03:01:22,453 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:01:22,453 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 03:01:22,647 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:01:22,647 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 03:01:22,844 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:01:22,844 [INFO] Testing MDSYS (SHA512)
+2025-12-30 03:01:22,845 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:02:24,201 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 03:02:24,201 [INFO] Testing MDSYS (DES)
+2025-12-30 03:02:24,202 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:02:27,056 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:02:34,921 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=49s
+2025-12-30 03:02:38,762 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=45s
+2025-12-30 03:02:41,619 [INFO] Job 2a86253a-4fa5-4052-b4f1-4f50eb3648c8 completed: 0/4 cracked
+2025-12-30 03:02:41,619 [INFO] Processing job 78400509-3a23-4779-b1b6-0716ab8551cb with 4 hashes
+2025-12-30 03:02:41,619 [INFO] Testing ORDSYS (SHA1)
+2025-12-30 03:02:41,620 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:02:44,449 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:02:49,332 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 03:02:52,167 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 03:02:55,031 [INFO] Testing ORDSYS (SHA512)
+2025-12-30 03:02:55,032 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:02:55,223 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:02:55,224 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 03:02:55,428 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:02:55,429 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 03:02:55,625 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:02:55,625 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 03:02:55,828 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:02:55,829 [INFO] Testing ORDSYS (SHA512)
+2025-12-30 03:02:55,829 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:03:58,190 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 03:03:58,191 [INFO] Testing ORDSYS (DES)
+2025-12-30 03:03:58,191 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:04:01,039 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:04:08,886 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=49s
+2025-12-30 03:04:12,723 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=45s
+2025-12-30 03:04:15,571 [INFO] Job 78400509-3a23-4779-b1b6-0716ab8551cb completed: 0/4 cracked
+2025-12-30 03:04:15,571 [INFO] Processing job c4116e72-e980-4019-bd03-58ed0786f852 with 4 hashes
+2025-12-30 03:04:15,571 [INFO] Testing DBSNMP (SHA1)
+2025-12-30 03:04:15,571 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:04:18,425 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:04:23,276 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 03:04:26,123 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 03:04:29,065 [INFO] Testing DBSNMP (SHA512)
+2025-12-30 03:04:29,066 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:04:29,290 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:04:29,291 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 03:04:29,518 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:04:29,519 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 03:04:29,750 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:04:29,751 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 03:04:29,976 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:04:29,977 [INFO] Testing DBSNMP (SHA512)
+2025-12-30 03:04:29,977 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:05:31,801 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 03:05:31,801 [INFO] Testing DBSNMP (DES)
+2025-12-30 03:05:31,802 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:05:35,935 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=55s
+2025-12-30 03:05:45,132 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=46s
+2025-12-30 03:05:49,310 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=42s
+2025-12-30 03:05:52,462 [INFO] Job c4116e72-e980-4019-bd03-58ed0786f852 completed: 0/4 cracked
+2025-12-30 03:05:52,463 [INFO] Processing job 818119f1-2c1e-4919-bc8b-95623398e6e4 with 4 hashes
+2025-12-30 03:05:52,463 [INFO] Testing WMSYS (SHA1)
+2025-12-30 03:05:52,463 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:05:55,597 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=56s
+2025-12-30 03:06:01,743 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=50s
+2025-12-30 03:06:04,863 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=47s
+2025-12-30 03:06:08,052 [INFO] Testing WMSYS (SHA512)
+2025-12-30 03:06:08,053 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:06:08,277 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:06:08,277 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 03:06:08,505 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:06:08,505 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 03:06:08,744 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:06:08,744 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 03:06:08,981 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:06:08,982 [INFO] Testing WMSYS (SHA512)
+2025-12-30 03:06:08,983 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:07:10,771 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 03:07:10,771 [INFO] Testing WMSYS (DES)
+2025-12-30 03:07:10,772 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:07:13,644 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:07:21,517 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=49s
+2025-12-30 03:07:25,420 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=45s
+2025-12-30 03:07:28,302 [INFO] Job 818119f1-2c1e-4919-bc8b-95623398e6e4 completed: 0/4 cracked
+2025-12-30 03:07:28,302 [INFO] Processing job e0289dc7-6ad4-441e-a243-4ef591341353 with 4 hashes
+2025-12-30 03:07:28,302 [INFO] Testing APEX_040200 (SHA1)
+2025-12-30 03:07:28,302 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:07:31,179 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:07:36,061 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 03:07:38,952 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 03:07:41,832 [INFO] Testing APEX_040200 (SHA512)
+2025-12-30 03:07:41,832 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:07:42,030 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:07:42,030 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 03:07:42,238 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:07:42,239 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 03:07:42,435 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:07:42,436 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 03:07:42,642 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:07:42,642 [INFO] Testing APEX_040200 (SHA512)
+2025-12-30 03:07:42,643 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:08:44,059 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 03:08:44,059 [INFO] Testing APEX_040200 (DES)
+2025-12-30 03:08:44,060 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:08:47,935 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=56s
+2025-12-30 03:08:56,810 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=47s
+2025-12-30 03:09:00,684 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=43s
+2025-12-30 03:09:03,550 [INFO] Job e0289dc7-6ad4-441e-a243-4ef591341353 completed: 0/4 cracked
+2025-12-30 03:09:03,551 [INFO] Processing job d038938d-f177-4eb2-8653-7b1e670a3fca with 4 hashes
+2025-12-30 03:09:03,551 [INFO] Testing APPQOSSYS (SHA1)
+2025-12-30 03:09:03,551 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:09:06,422 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:09:11,293 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 03:09:14,149 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 03:09:17,028 [INFO] Testing APPQOSSYS (SHA512)
+2025-12-30 03:09:17,029 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:09:17,231 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:09:17,231 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 03:09:17,429 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:09:17,430 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 03:09:17,633 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:09:17,634 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 03:09:17,840 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:09:17,840 [INFO] Testing APPQOSSYS (SHA512)
+2025-12-30 03:09:17,841 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:10:20,262 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 03:10:20,263 [INFO] Testing APPQOSSYS (DES)
+2025-12-30 03:10:20,263 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:10:24,146 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=56s
+2025-12-30 03:10:32,027 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=48s
+2025-12-30 03:10:35,905 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=44s
+2025-12-30 03:10:38,788 [INFO] Job d038938d-f177-4eb2-8653-7b1e670a3fca completed: 0/4 cracked
+2025-12-30 03:10:38,788 [INFO] Processing job da4e54ce-00ac-4c79-9540-5c7e882b0054 with 4 hashes
+2025-12-30 03:10:38,788 [INFO] Testing GSMADMIN_INTERNAL (SHA1)
+2025-12-30 03:10:38,789 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:10:40,648 [WARNING] CRACKED: GSMADMIN_INTERNAL (SHA1)
+2025-12-30 03:10:40,648 [INFO] Testing GSMADMIN_INTERNAL (SHA512)
+2025-12-30 03:10:40,649 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:10:40,858 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:10:40,858 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 03:10:41,063 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:10:41,063 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 03:10:41,269 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:10:41,270 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 03:10:41,474 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:10:41,474 [INFO] Testing GSMADMIN_INTERNAL (SHA512)
+2025-12-30 03:10:41,475 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:11:33,789 [WARNING] CRACKED: GSMADMIN_INTERNAL (SHA512)
+2025-12-30 03:11:33,790 [INFO] Testing GSMADMIN_INTERNAL (DES)
+2025-12-30 03:11:33,790 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:11:35,677 [WARNING] CRACKED: GSMADMIN_INTERNAL (DES)
+2025-12-30 03:11:35,678 [INFO] Job da4e54ce-00ac-4c79-9540-5c7e882b0054 completed: 3/4 cracked
+2025-12-30 03:11:35,678 [INFO] Processing job 3062ec75-b2cb-42c0-9a2a-5f374364c42b with 4 hashes
+2025-12-30 03:11:35,678 [INFO] Testing ORDDATA (SHA1)
+2025-12-30 03:11:35,679 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:11:38,558 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:11:43,419 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 03:11:46,301 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 03:11:49,183 [INFO] Testing ORDDATA (SHA512)
+2025-12-30 03:11:49,184 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:11:49,393 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:11:49,393 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 03:11:49,601 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:11:49,602 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 03:11:49,806 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:11:49,807 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 03:11:50,015 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:11:50,016 [INFO] Testing ORDDATA (SHA512)
+2025-12-30 03:11:50,016 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:12:51,423 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 03:12:51,423 [INFO] Testing ORDDATA (DES)
+2025-12-30 03:12:51,424 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:12:55,298 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=56s
+2025-12-30 03:13:03,161 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=48s
+2025-12-30 03:13:07,049 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=44s
+2025-12-30 03:13:09,993 [INFO] Job 3062ec75-b2cb-42c0-9a2a-5f374364c42b completed: 0/4 cracked
+2025-12-30 03:13:09,993 [INFO] Processing job 8bdf3f56-7d84-4e1a-b409-24f7b5539f4f with 4 hashes
+2025-12-30 03:13:09,993 [INFO] Testing CTXSYS (SHA1)
+2025-12-30 03:13:09,994 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:13:12,866 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:13:18,741 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=51s
+2025-12-30 03:13:21,615 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=48s
+2025-12-30 03:13:23,479 [INFO] Testing CTXSYS (SHA512)
+2025-12-30 03:13:23,480 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:13:23,675 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:13:23,676 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 03:13:23,874 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:13:23,874 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 03:13:24,075 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:13:24,075 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 03:13:24,281 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:13:24,281 [INFO] Testing CTXSYS (SHA512)
+2025-12-30 03:13:24,282 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:14:25,697 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 03:14:25,698 [INFO] Testing CTXSYS (DES)
+2025-12-30 03:14:25,698 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:14:28,564 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:14:36,431 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=49s
+2025-12-30 03:14:40,345 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=45s
+2025-12-30 03:14:43,233 [INFO] Job 8bdf3f56-7d84-4e1a-b409-24f7b5539f4f completed: 0/4 cracked
+2025-12-30 03:14:43,234 [INFO] Processing job a4b39935-bb94-4f22-9bf9-5f4af40329ba with 1 hashes
+2025-12-30 03:14:43,234 [INFO] Testing ANONYMOUS (UNKNOWN)
+2025-12-30 03:14:43,234 [INFO] Running hashcat: mode=unknown, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:14:43,238 [ERROR] Hashcat error (code 255): The specified parameter cannot use 'unknown' as a value - must be a number.
+
+
+2025-12-30 03:14:43,238 [INFO] Running hashcat: mode=unknown, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 03:14:43,241 [ERROR] Hashcat error (code 255): The specified parameter cannot use 'unknown' as a value - must be a number.
+
+
+2025-12-30 03:14:43,242 [INFO] Running hashcat: mode=unknown, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 03:14:43,244 [ERROR] Hashcat error (code 255): The specified parameter cannot use 'unknown' as a value - must be a number.
+
+
+2025-12-30 03:14:43,245 [INFO] Running hashcat: mode=unknown, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 03:14:43,247 [ERROR] Hashcat error (code 255): The specified parameter cannot use 'unknown' as a value - must be a number.
+
+
+2025-12-30 03:14:43,248 [INFO] Job a4b39935-bb94-4f22-9bf9-5f4af40329ba completed: 0/1 cracked
+2025-12-30 03:14:43,248 [INFO] Processing job 1198cfb2-bd38-45cf-818a-859a67f2f174 with 4 hashes
+2025-12-30 03:14:43,248 [INFO] Testing XDB (SHA1)
+2025-12-30 03:14:43,249 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:14:46,135 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:14:50,999 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 03:14:53,959 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 03:14:57,078 [INFO] Testing XDB (SHA512)
+2025-12-30 03:14:57,079 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:14:57,303 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:14:57,303 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 03:14:57,527 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:14:57,528 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 03:14:57,748 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:14:57,749 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 03:14:58,003 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:14:58,004 [INFO] Testing XDB (SHA512)
+2025-12-30 03:14:58,005 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:15:59,752 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 03:15:59,752 [INFO] Testing XDB (DES)
+2025-12-30 03:15:59,753 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=60s
+2025-12-30 03:16:02,640 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:16:10,498 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=49s
+2025-12-30 03:16:13,388 [WARNING] CRACKED: XDB (DES)
+2025-12-30 03:16:13,389 [INFO] Job 1198cfb2-bd38-45cf-818a-859a67f2f174 completed: 1/4 cracked
+2025-12-30 03:16:13,389 [INFO] Processing job 837e35d2-7e4d-463e-be50-d82c638b6d21 with 4 hashes
+2025-12-30 03:16:13,389 [INFO] Testing ORDPLUGINS (SHA1)
+2025-12-30 03:16:13,390 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:16:16,324 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:16:22,424 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=50s
+2025-12-30 03:16:25,548 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=47s
+2025-12-30 03:16:28,714 [INFO] Testing ORDPLUGINS (SHA512)
+2025-12-30 03:16:28,715 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:16:28,940 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:16:28,941 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 03:16:29,169 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:16:29,170 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 03:16:29,398 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:16:29,399 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 03:16:29,637 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:16:29,637 [INFO] Testing ORDPLUGINS (SHA512)
+2025-12-30 03:16:29,638 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:17:31,360 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 03:17:31,361 [INFO] Testing ORDPLUGINS (DES)
+2025-12-30 03:17:31,361 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:17:35,228 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=56s
+2025-12-30 03:17:44,083 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=47s
+2025-12-30 03:17:47,947 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=43s
+2025-12-30 03:17:50,834 [INFO] Job 837e35d2-7e4d-463e-be50-d82c638b6d21 completed: 0/4 cracked
+2025-12-30 03:17:50,834 [INFO] Processing job 70739709-f1a8-4b28-bf59-a48f5ffdf4b9 with 4 hashes
+2025-12-30 03:17:50,834 [INFO] Testing DVSYS (SHA1)
+2025-12-30 03:17:50,834 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:17:53,694 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:17:58,577 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 03:18:01,453 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 03:18:03,324 [INFO] Testing DVSYS (SHA512)
+2025-12-30 03:18:03,325 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:18:03,519 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:18:03,519 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 03:18:03,722 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:18:03,722 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 03:18:03,927 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:18:03,928 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 03:18:04,129 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:18:04,129 [INFO] Testing DVSYS (SHA512)
+2025-12-30 03:18:04,130 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:19:05,518 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 03:19:05,519 [INFO] Testing DVSYS (DES)
+2025-12-30 03:19:05,519 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:19:08,416 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:19:16,288 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=49s
+2025-12-30 03:19:20,157 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=45s
+2025-12-30 03:19:23,028 [INFO] Job 70739709-f1a8-4b28-bf59-a48f5ffdf4b9 completed: 0/4 cracked
+2025-12-30 03:19:23,028 [INFO] Processing job cb69fd9b-0f59-486b-a1d0-e150c68f58e7 with 4 hashes
+2025-12-30 03:19:23,028 [INFO] Testing SI_INFORMTN_SCHEMA (SHA1)
+2025-12-30 03:19:23,029 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:19:25,892 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:19:30,755 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 03:19:33,625 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 03:19:36,489 [INFO] Testing SI_INFORMTN_SCHEMA (SHA512)
+2025-12-30 03:19:36,490 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:19:36,688 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:19:36,689 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 03:19:36,891 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:19:36,891 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 03:19:37,089 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:19:37,089 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 03:19:37,296 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:19:37,297 [INFO] Testing SI_INFORMTN_SCHEMA (SHA512)
+2025-12-30 03:19:37,297 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:20:38,682 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 03:20:38,683 [INFO] Testing SI_INFORMTN_SCHEMA (DES)
+2025-12-30 03:20:38,683 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:20:42,537 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=56s
+2025-12-30 03:20:52,426 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=46s
+2025-12-30 03:20:56,289 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=42s
+2025-12-30 03:20:59,151 [INFO] Job cb69fd9b-0f59-486b-a1d0-e150c68f58e7 completed: 0/4 cracked
+2025-12-30 03:20:59,151 [INFO] Processing job 079330ce-da09-4c5d-b33c-c9eeb746e99e with 4 hashes
+2025-12-30 03:20:59,151 [INFO] Testing OLAPSYS (SHA1)
+2025-12-30 03:20:59,151 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:21:01,046 [WARNING] CRACKED: OLAPSYS (SHA1)
+2025-12-30 03:21:01,046 [INFO] Testing OLAPSYS (SHA512)
+2025-12-30 03:21:01,046 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:21:01,246 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:21:01,246 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 03:21:01,444 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:21:01,445 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 03:21:01,639 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:21:01,640 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 03:21:01,835 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:21:01,835 [INFO] Testing OLAPSYS (SHA512)
+2025-12-30 03:21:01,836 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:22:04,219 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 03:22:04,219 [INFO] Testing OLAPSYS (DES)
+2025-12-30 03:22:04,220 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:22:06,077 [WARNING] CRACKED: OLAPSYS (DES)
+2025-12-30 03:22:06,078 [INFO] Job 079330ce-da09-4c5d-b33c-c9eeb746e99e completed: 2/4 cracked
+2025-12-30 03:22:06,078 [INFO] Processing job ab2eed1d-cd58-4a33-8b64-62cb744ef4d1 with 4 hashes
+2025-12-30 03:22:06,078 [INFO] Testing LBACSYS (SHA1)
+2025-12-30 03:22:06,079 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:22:08,950 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:22:13,831 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 03:22:16,686 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 03:22:19,555 [INFO] Testing LBACSYS (SHA512)
+2025-12-30 03:22:19,555 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:22:19,750 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:22:19,750 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 03:22:19,958 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:22:19,959 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 03:22:20,163 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:22:20,163 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 03:22:20,355 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:22:20,356 [INFO] Testing LBACSYS (SHA512)
+2025-12-30 03:22:20,357 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:23:21,765 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 03:23:21,766 [INFO] Testing LBACSYS (DES)
+2025-12-30 03:23:21,766 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:23:25,629 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=56s
+2025-12-30 03:23:33,491 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=48s
+2025-12-30 03:23:37,334 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=44s
+2025-12-30 03:23:40,202 [INFO] Job ab2eed1d-cd58-4a33-8b64-62cb744ef4d1 completed: 0/4 cracked
+2025-12-30 03:23:40,202 [INFO] Processing job d756e238-5b50-4261-bc12-9c78adfea433 with 4 hashes
+2025-12-30 03:23:40,202 [INFO] Testing OUTLN (SHA1)
+2025-12-30 03:23:40,202 [INFO] Running hashcat: mode=112, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:23:43,071 [INFO] Running hashcat: mode=112, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:23:47,940 [INFO] Running hashcat: mode=112, wordlist=kaonashi14M.txt, runtime=52s
+2025-12-30 03:23:50,809 [INFO] Running hashcat: mode=112, wordlist=piotrcki-wordlist-top10m.txt, runtime=49s
+2025-12-30 03:23:53,676 [INFO] Testing OUTLN (SHA512)
+2025-12-30 03:23:53,677 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:23:53,877 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:23:53,877 [INFO] Running hashcat: mode=12300, wordlist=hk_hlm_founds.txt, runtime=59s
+2025-12-30 03:23:54,076 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:23:54,076 [INFO] Running hashcat: mode=12300, wordlist=kaonashi14M.txt, runtime=59s
+2025-12-30 03:23:54,280 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:23:54,280 [INFO] Running hashcat: mode=12300, wordlist=piotrcki-wordlist-top10m.txt, runtime=59s
+2025-12-30 03:23:54,475 [ERROR] Hashcat error (code 255): No hashes loaded.
+
+
+2025-12-30 03:23:54,475 [INFO] Testing OUTLN (SHA512)
+2025-12-30 03:23:54,476 [INFO] Running hashcat: mode=12300, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:24:55,854 [INFO] Hashcat reached runtime limit (59s)
+2025-12-30 03:24:55,854 [INFO] Testing OUTLN (DES)
+2025-12-30 03:24:55,855 [INFO] Running hashcat: mode=3100, wordlist=hashmob.net.medium.found.txt, runtime=59s
+2025-12-30 03:24:58,715 [INFO] Running hashcat: mode=3100, wordlist=hk_hlm_founds.txt, runtime=57s
+2025-12-30 03:25:06,571 [INFO] Running hashcat: mode=3100, wordlist=kaonashi14M.txt, runtime=49s
+2025-12-30 03:25:10,444 [INFO] Running hashcat: mode=3100, wordlist=piotrcki-wordlist-top10m.txt, runtime=45s
+2025-12-30 03:25:13,371 [INFO] Job d756e238-5b50-4261-bc12-9c78adfea433 completed: 0/4 cracked
